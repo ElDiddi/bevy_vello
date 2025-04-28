@@ -3,7 +3,7 @@ use crate::integrations::{VectorLoaderError, svg::load_svg_from_bytes};
 use bevy::{
     asset::{AssetLoader, LoadContext, io::Reader},
     prelude::*,
-    utils::ConditionalSendFuture,
+    tasks::ConditionalSendFuture,
 };
 
 #[derive(Default)]

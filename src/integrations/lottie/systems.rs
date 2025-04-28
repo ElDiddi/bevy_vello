@@ -6,7 +6,7 @@ use crate::{
     PlaybackDirection, PlaybackLoopBehavior, PlaybackOptions, Playhead,
     integrations::lottie::PlaybackPlayMode, render::VelloView,
 };
-use bevy::{prelude::*, utils::Instant, window::PrimaryWindow};
+use bevy::{platform::time::Instant, prelude::*, window::PrimaryWindow};
 use std::time::Duration;
 
 /// Helper function to get the next smallest representable f64.
@@ -167,7 +167,7 @@ pub fn run_transitions(
         // We only support rendering to the primary window right now.
         return;
     };
-    let Ok((camera, view)) = query_view.get_single() else {
+    let Ok((camera, view)) = query_view.single() else {
         return;
     };
 
